@@ -8,8 +8,8 @@ project:
     - "about.qmd"
     - "now.qmd"
     - "pages/"    
-    #- "!pages/"   # not in this dir
-    #- "**/*.qmd"  # all pages
+    #- "!pages/"   # do not render pages in this dir
+    #- "**/*.qmd"  # render all pages
   
   preview: 
     port: 1909
@@ -53,16 +53,8 @@ format:
   html:
     theme:
       light: 
-        - cosmo           # base theme 
-        - custom.scss     # custom scss
+        - cosmo          # base theme 
+        - custom.scss    # custom scss
       dark: 
         - cosmo          # base theme 
-        - custom.scss     # Same file, uses [data-theme="dark"]
-
-#format:
-#  html:
-#    theme:
-#      - cosmo
-#      - brand
-#    css: styles.css                # css file (optional customize)
-    #toc: true
+        - custom.scss    # Same file, uses [data-theme="dark"]
