@@ -1,0 +1,68 @@
+# _quarto.yml
+project:
+  type: website
+  
+  output-dir: docs
+  render:
+    - "index.qmd"
+    - "about.qmd"
+    - "now.qmd"
+    - "pages/"    
+    #- "!pages/"   # not in this dir
+    #- "**/*.qmd"  # all pages
+  
+  preview: 
+    port: 1909
+
+website:
+
+  navbar:
+    left: # left side of navbar
+      - href: index.qmd             # index/home page
+        text: "My Name or Site Title" # home page title
+      - href: now.qmd               # my now page
+        text: Now                   # now page title
+      
+      # optional about me; comment out it not desired
+      - href: about.qmd             # about page
+        text: About                 # about page title
+        
+      # pages without a dropdown
+      - href: pages/index.qmd       # projects listing page
+        text: "Project Title"       # page text
+      
+      # pages with a dropdown
+      - text: "Project Title w/DD"  # page text
+        menu: 
+          - pages/page01.qmd        # the first page
+#          - pages/othername.qmd    # the second page
+
+
+    right: # right side of navbar 
+      - icon: github
+        href: https://mygithub.com/
+      - icon: linkedin
+        href: https://www.linkedin.com/school/claremont-mckenna-college/posts/?feedView=all
+      - icon: twitter-x
+        href: https://x.com/CMCnews
+      - icon: bluesky
+        href: https://bsky.app/profile/cmc.edu
+        
+# format and style
+format:
+  html:
+    theme:
+      light: 
+        - cosmo           # base theme 
+        - custom.scss     # custom scss
+      dark: 
+        - cosmo          # base theme 
+        - custom.scss     # Same file, uses [data-theme="dark"]
+
+#format:
+#  html:
+#    theme:
+#      - cosmo
+#      - brand
+#    css: styles.css                # css file (optional customize)
+    #toc: true
